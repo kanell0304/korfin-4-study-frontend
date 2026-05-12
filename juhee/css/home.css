@@ -1,0 +1,176 @@
+@import url("https://fonts.googleapis.com/css2?family=BBH+Bogle&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f4f2ea;
+  font-family: "BBH Bogle", sans-serif;
+  color: #4f6b50;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+.wrap {
+  width: 1200px;
+  margin: 10px auto;
+}
+
+/* 상단 날짜 */
+
+.top-date {
+  display: flex;
+  margin-bottom: 15px;
+}
+
+.top-date .month-link {
+  width: 38px;
+  height: 30px;
+
+  border: 1px solid #8ea084;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 20px;
+  font-weight: 500;
+
+  &:not(.current-month) {
+    background-color: transparent;
+    color: #858585;
+  }
+}
+.current-month {
+  /* color: #7d7d7d; */
+  background-color: #e2dcd0;
+}
+
+/* 타이틀 */
+
+h1 {
+  font-size: 42px;
+  font-weight: 600;
+
+  margin-bottom: 5px;
+  word-spacing: 6px;
+}
+
+/* 메인 레이아웃 */
+
+.content {
+  display: flex;
+  gap: 20px;
+}
+
+/* 왼쪽 모눈 */
+
+.memo-grid {
+  width: 330px;
+  /* height: 620px; */
+
+  border: 2px solid #6f876d;
+
+  position: relative;
+
+  background-image:
+    linear-gradient(to right, rgba(111, 135, 109, 0.3) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(111, 135, 109, 0.3) 1px, transparent 1px);
+
+  background-size: 16px 16px;
+}
+
+.month {
+  position: absolute;
+  top: 18px;
+  left: 22px;
+
+  font-size: 54px;
+  font-weight: 600;
+}
+
+/* 오른쪽 */
+
+.calendar-wrap {
+  flex: 1;
+}
+
+/* 요일 */
+
+.week-header {
+  width: calc(100% - 350px);
+
+  margin-left: auto;
+  margin-bottom: 2px;
+
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+}
+
+.week-header div {
+  font-size: 14px;
+  font-weight: 500;
+
+  text-align: center;
+
+  margin-bottom: 8px;
+}
+
+.day.sun {
+  color: #d64b4b;
+}
+
+.day.sat {
+  color: #4d57d6;
+}
+
+/* 캘린더 */
+
+.calendar {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  border: 2px solid #6f876d;
+}
+
+.day {
+  height: 90px;
+
+  border-right: 1px solid #b8b8b8;
+  border-bottom: 1px solid #b8b8b8;
+
+  padding: 10px;
+
+  font-size: 14px;
+  font-weight: 500;
+
+  color: #7d7d7d;
+}
+
+/* 겹치는 부분 제거 */
+.day:nth-of-type(7),
+.day:nth-of-type(14),
+.day:nth-of-type(21),
+.day:nth-of-type(28),
+.day:nth-of-type(35),
+.day:nth-of-type(42) {
+  border-right: none;
+}
+.day:nth-of-type(36),
+.day:nth-of-type(37),
+.day:nth-of-type(38),
+.day:nth-of-type(39),
+.day:nth-of-type(40),
+.day:nth-of-type(41),
+.day:nth-of-type(42) {
+  border-bottom: none;
+}
+.sun-text {
+  color: #d64b4b;
+}
+
+.sat-text {
+  color: #4d57d6;
+}
